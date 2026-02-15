@@ -1,0 +1,7 @@
+azure-functions
+msal
+requests
+python-dotenv
+azure-search-documents
+azure-core
+azure-identity

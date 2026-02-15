@@ -1,0 +1,131 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Purview Deep Reasoning API",
+    "description": "This API exposes the reasoning capability for Microsoft Purview and Microsoft 365 Copilot. It allows deep reasoning queries against Purview metadata and insights using Azure OpenAI.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Purview Reasoning Support",
+      "email": "support@contoso.com",
+      "url": "https://contoso.com/support"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://purview-deep-reasoning-func-c0e9ckczg9gughah.eastus-01.azurewebsites.net",
+      "description": "Azure Function App - Production"
+    }
+  ],
+  "paths": {
+    "/api/reasoning": {
+      "post": {
+        "operationId": "deepReasoning",
+        "summary": "Perform deep reasoning for Microsoft Purview data.",
+        "description": "Takes a natural language query or instruction and returns an intelligent reasoning output based on Purview and M365 data context.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "The user’s question or instruction to the reasoning engine."
+                  }
+                },
+                "required": ["query"]
+              },
+              "example": {
+                "query": "Summarize sensitive data labels in our Purview catalog."
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful reasoning result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "description": "The reasoning response from the model."
+                    }
+                  }
+                },
+                "example": {
+                  "result": "There are 12 assets labeled as 'Confidential' in the Purview catalog."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request format."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/api/reasoning-v2": {
+      "post": {
+        "operationId": "deepReasoningV2",
+        "summary": "Perform deep reasoning for Microsoft Purview data (v2).",
+        "description": "Takes a natural language query or instruction and returns reasoning output from the v2 endpoint.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "The user’s question or instruction to the reasoning engine."
+                  }
+                },
+                "required": ["query"]
+              },
+              "example": {
+                "query": "Summarize sensitive data labels in our Purview catalog."
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful reasoning result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "description": "The reasoning response from the model."
+                    }
+                  }
+                },
+                "example": {
+                  "result": "There are 12 assets labeled as 'Confidential' in the Purview catalog."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request format."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "security": []
+}
