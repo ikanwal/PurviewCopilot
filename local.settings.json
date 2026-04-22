@@ -4,8 +4,8 @@
   "Values": {
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=funcstorage962927703;AccountKey=EKJ/TWDXp+EJrsKJZ2XA2NeLPEQQaY1Dg3UoIoyrMv3dFIxXLwr1UztgJGBeRRaMzb3a6HzcQKrI+AStIKR6Iw==;EndpointSuffix=core.windows.net",
     "FUNCTIONS_WORKER_RUNTIME": "python",
-    "TENANT_ID" : "b2933773-03f4-460c-9c82-9b0e962d97c0",
-    "PURVIEW_CLIENT_ID": "e5b0cfb1-b58f-48d1-b1b5-aec7b35d980f",
+    "TENANT_ID" : "",
+    "PURVIEW_CLIENT_ID": "",
     "GRAPH_CONNECTION_ID": "PurviewNASA", 
     "AZURE_OPENAI_ENDPOINT": "https://azhaanai.openai.azure.com",
     "AZURE_OPENAI_API_KEY": "",
